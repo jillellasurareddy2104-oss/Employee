@@ -21,7 +21,9 @@ namespace RestaurantAppWPF
         public EmployeeForm()
         {
             InitializeComponent();
+
             EmployeesDataGrid.ItemsSource = _employees;
+
             // load from database
             try
             {
@@ -35,6 +37,7 @@ namespace RestaurantAppWPF
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+
             if (!int.TryParse(EmpIdTextBox.Text.Trim(), out int id))
             {
                 MessageBox.Show("Please enter a valid EmpId (integer).", "Validation", MessageBoxButton.OK, MessageBoxImage.Warning);
