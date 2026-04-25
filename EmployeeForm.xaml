@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="RestaurantAppWPF.EmployeeForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:RestaurantAppWPF"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Form -->
+        <Border Grid.Row="0" BorderBrush="Gray" BorderThickness="1" Padding="8" CornerRadius="4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="EmpId:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="0,3" />
+                <TextBox x:Name="EmpIdTextBox" Grid.Row="0" Grid.Column="1" Margin="8,2" />
+
+                <TextBlock Text="EmpName:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Margin="16,3,0,3" />
+                <TextBox x:Name="EmpNameTextBox" Grid.Row="0" Grid.Column="3" Margin="8,2" />
+
+                <TextBlock Text="Salary:" Background="Brown" Foreground="White" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,3" />
+                <TextBox x:Name="SalaryTextBox" Grid.Row="1" Grid.Column="1" Margin="8,2" />
+
+                <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Right">
+                    <Button x:Name="AddButton" Background="AliceBlue" Content="Add" Width="75" Margin="0,4,8,0" Click="AddButton_Click" />
+                    <Button x:Name="UpdateButton" Content="Update" Width="75" Margin="0,4,8,0" Click="UpdateButton_Click" />
+                    <Button x:Name="ClearButton" Content="Clear" Width="75" Margin="0,4,0,0" Click="ClearButton_Click" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Spacer -->
+        <Separator Grid.Row="1" Margin="0,8" />
+
+        <!-- Data grid -->
+        <DataGrid x:Name="EmployeesDataGrid" Grid.Row="2" AutoGenerateColumns="False" CanUserAddRows="False"
+                  SelectionMode="Single" SelectionUnit="FullRow" Margin="0,8,0,0" IsReadOnly="True" 
+                  SelectionChanged="EmployeesDataGrid_SelectionChanged" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="EmpId" Binding="{Binding EmpId}" Width="Auto" />
+                <DataGridTextColumn Header="EmpName" Binding="{Binding EmpName}" Width="*" />
+                <DataGridTextColumn Header="Salary" Binding="{Binding Salary}" Width="Auto"  />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
