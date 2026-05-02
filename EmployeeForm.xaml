@@ -28,10 +28,10 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="EmpId:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="0,3" />
+                <TextBlock Text="EmpployeeId:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="0,3" />
                 <TextBox x:Name="EmpIdTextBox" Grid.Row="0" Grid.Column="1" Margin="8,2" />
 
-                <TextBlock Text="EmpName:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Margin="16,3,0,3" />
+                <TextBlock Text="EmployeeName:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Margin="16,3,0,3" />
                 <TextBox x:Name="EmpNameTextBox" Grid.Row="0" Grid.Column="3" Margin="8,2" />
 
                 <TextBlock Text="Salary:" Background="Brown" Foreground="White" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,3" />
